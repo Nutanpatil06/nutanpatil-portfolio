@@ -43,7 +43,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative section-padding"
+      className="min-h-screen flex items-center justify-center relative section-padding pt-32"
     >
       <div className="container mx-auto text-center">
         {/* Greeting */}
