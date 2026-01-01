@@ -1,5 +1,5 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Github, ExternalLink, Folder } from 'lucide-react';
+import { Github, Folder, Clock } from 'lucide-react';
 
 const projects = [
   {
@@ -9,8 +9,7 @@ const projects = [
       'An intelligent code completion tool powered by GPT-4 that helps developers write better code faster with context-aware suggestions.',
     technologies: ['Python', 'OpenAI API', 'FastAPI', 'React'],
     github: 'https://github.com',
-    live: 'https://example.com',
-    featured: true,
+    status: 'completed',
   },
   {
     id: 2,
@@ -19,8 +18,7 @@ const projects = [
       'High-performance distributed task queue system capable of handling millions of jobs with fault tolerance and horizontal scaling.',
     technologies: ['Go', 'Redis', 'Kubernetes', 'gRPC'],
     github: 'https://github.com',
-    live: 'https://example.com',
-    featured: true,
+    status: 'completed',
   },
   {
     id: 3,
@@ -29,38 +27,16 @@ const projects = [
       'Google Docs-like real-time collaboration platform with CRDT-based conflict resolution and offline support.',
     technologies: ['TypeScript', 'WebSocket', 'Yjs', 'Next.js'],
     github: 'https://github.com',
-    live: 'https://example.com',
-    featured: true,
+    status: 'completed',
   },
   {
     id: 4,
-    title: 'ML Model Deployment Platform',
+    title: 'Neural Network Visualizer',
     description:
-      'End-to-end platform for deploying, monitoring, and scaling machine learning models in production environments.',
-    technologies: ['Python', 'Docker', 'MLflow', 'AWS'],
-    github: 'https://github.com',
-    live: null,
-    featured: false,
-  },
-  {
-    id: 5,
-    title: 'Crypto Portfolio Tracker',
-    description:
-      'Real-time cryptocurrency portfolio tracker with price alerts, analytics, and tax reporting features.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'WebSocket'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    featured: false,
-  },
-  {
-    id: 6,
-    title: 'Developer Blog Platform',
-    description:
-      'Modern blog platform for developers with MDX support, syntax highlighting, and built-in analytics.',
-    technologies: ['Next.js', 'MDX', 'Tailwind', 'Vercel'],
-    github: 'https://github.com',
-    live: 'https://example.com',
-    featured: false,
+      'Building an interactive tool to visualize neural network architectures and training processes in real-time with 3D representations.',
+    technologies: ['Python', 'Three.js', 'TensorFlow', 'WebGL'],
+    github: null,
+    status: 'ongoing',
   },
 ];
 
@@ -83,7 +59,7 @@ export const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={project.id}
@@ -91,7 +67,7 @@ export const ProjectsSection = () => {
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-10'
-              } ${project.featured ? 'gradient-border' : ''}`}
+              }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="flex items-center justify-between mb-4">
@@ -99,7 +75,12 @@ export const ProjectsSection = () => {
                   <Folder size={24} />
                 </div>
                 <div className="flex items-center gap-3">
-                  {project.github && (
+                  {project.status === 'ongoing' ? (
+                    <span className="flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                      <Clock size={12} />
+                      Ongoing
+                    </span>
+                  ) : project.github ? (
                     <a
                       href={project.github}
                       target="_blank"
@@ -108,17 +89,7 @@ export const ProjectsSection = () => {
                     >
                       <Github size={20} />
                     </a>
-                  )}
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                  )}
+                  ) : null}
                 </div>
               </div>
 
@@ -126,7 +97,7 @@ export const ProjectsSection = () => {
                 {project.title}
               </h3>
 
-              <p className="text-muted-foreground text-sm mb-4 flex-grow">
+              <p className="text-muted-foreground text-sm mb-4 flex-grow leading-relaxed">
                 {project.description}
               </p>
 
@@ -134,7 +105,7 @@ export const ProjectsSection = () => {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs text-muted-foreground font-mono"
+                    className="text-xs px-2 py-1 rounded-md bg-secondary/50 text-muted-foreground font-mono"
                   >
                     {tech}
                   </span>
