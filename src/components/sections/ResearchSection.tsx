@@ -1,42 +1,24 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { FileText, Github, ExternalLink, Users, Calendar } from 'lucide-react';
+import { FileText, Users, Clock } from 'lucide-react';
 
 const papers = [
   {
     id: 1,
     title: 'Efficient Transformer Architectures for Low-Resource NLP',
     authors: ['Your Name', 'Co-Author A', 'Co-Author B'],
-    venue: 'ACL 2024',
-    year: 2024,
+    venue: 'In Progress',
     abstract:
-      'We propose novel transformer modifications that reduce computational requirements by 60% while maintaining performance on low-resource language tasks.',
-    preprint: 'https://arxiv.org/abs/xxxx.xxxxx',
-    github: 'https://github.com',
-    citations: 15,
+      'Proposing novel transformer modifications that reduce computational requirements by 60% while maintaining performance on low-resource language tasks.',
+    status: 'ongoing',
   },
   {
     id: 2,
     title: 'Distributed Learning with Privacy Guarantees',
     authors: ['Your Name', 'Co-Author C'],
-    venue: 'NeurIPS 2023',
-    year: 2023,
+    venue: 'In Progress',
     abstract:
-      'A novel framework for federated learning that provides differential privacy guarantees while achieving state-of-the-art accuracy on benchmark datasets.',
-    preprint: 'https://arxiv.org/abs/xxxx.xxxxx',
-    github: 'https://github.com',
-    citations: 42,
-  },
-  {
-    id: 3,
-    title: 'Scaling Graph Neural Networks to Billion-Edge Graphs',
-    authors: ['Your Name', 'Co-Author D', 'Co-Author E'],
-    venue: 'ICML 2023',
-    year: 2023,
-    abstract:
-      'We present a distributed GNN training system that enables training on graphs with billions of edges using commodity hardware.',
-    preprint: 'https://arxiv.org/abs/xxxx.xxxxx',
-    github: 'https://github.com',
-    citations: 28,
+      'Developing a novel framework for federated learning that provides differential privacy guarantees while achieving state-of-the-art accuracy on benchmark datasets.',
+    status: 'ongoing',
   },
 ];
 
@@ -55,11 +37,11 @@ export const ResearchSection = () => {
             <span className="gradient-text">Research</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Published papers and ongoing research work
+            Ongoing research work and publications
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-3xl mx-auto space-y-6">
           {papers.map((paper, index) => (
             <div
               key={paper.id}
@@ -76,52 +58,25 @@ export const ResearchSection = () => {
                 </div>
 
                 <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-3 mb-2">
-                    <span className="px-3 py-1 text-xs rounded-full bg-accent/10 text-accent border border-accent/20">
-                      {paper.venue}
-                    </span>
-                    <span className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <Calendar size={14} />
-                      {paper.year}
+                  <div className="flex flex-wrap items-center gap-3 mb-3">
+                    <span className="flex items-center gap-1.5 px-3 py-1 text-xs rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                      <Clock size={12} />
+                      Ongoing
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-display font-bold mb-2">
+                  <h3 className="text-xl font-display font-bold mb-3 leading-snug">
                     {paper.title}
                   </h3>
 
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
                     <Users size={14} />
                     <span>{paper.authors.join(', ')}</span>
                   </div>
 
-                  <p className="text-muted-foreground text-sm mb-4">
+                  <p className="text-muted-foreground text-sm leading-relaxed">
                     {paper.abstract}
                   </p>
-
-                  <div className="flex flex-wrap items-center gap-4">
-                    <a
-                      href={paper.preprint}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-primary hover:underline"
-                    >
-                      <ExternalLink size={16} />
-                      Preprint
-                    </a>
-                    <a
-                      href={paper.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-primary hover:underline"
-                    >
-                      <Github size={16} />
-                      Code
-                    </a>
-                    <span className="text-sm text-muted-foreground">
-                      {paper.citations} citations
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
