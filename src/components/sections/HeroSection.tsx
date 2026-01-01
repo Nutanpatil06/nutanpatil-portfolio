@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Github, Linkedin, Mail, ChevronDown, User } from 'lucide-react';
+import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 
 const roles = ['Full Stack Developer', 'Researcher', 'Open Source Contributor'];
 
@@ -43,34 +43,29 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative section-padding pt-32"
+      className="min-h-screen flex items-center justify-center relative section-padding"
     >
       <div className="container mx-auto text-center">
-        {/* Avatar */}
-        <div className="mb-8 animate-slide-up">
-          <div className="relative inline-block">
-            <div className="w-40 h-40 rounded-full glass-card flex items-center justify-center animate-float glow-effect">
-              <User size={64} className="text-primary" />
-            </div>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 blur-xl -z-10" />
-          </div>
-        </div>
+        {/* Greeting */}
+        <p className="text-lg md:text-xl text-primary mb-4 animate-slide-up font-medium tracking-wide">
+          Hello, I'm
+        </p>
 
         {/* Name */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-4 animate-slide-up delay-100">
+        <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-bold mb-6 animate-slide-up delay-100">
           <span className="gradient-text">Your Name</span>
         </h1>
 
         {/* Typing Animation Role */}
-        <div className="h-12 mb-8 animate-slide-up delay-200">
-          <p className="text-xl md:text-2xl text-muted-foreground">
-            <span className="text-foreground">{displayedText}</span>
+        <div className="h-14 mb-8 animate-slide-up delay-200">
+          <p className="text-2xl md:text-3xl text-muted-foreground">
+            <span className="text-foreground font-light">{displayedText}</span>
             <span className="animate-pulse text-primary">|</span>
           </p>
         </div>
 
         {/* Tagline */}
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-slide-up delay-300">
+        <p className="text-lg md:text-xl text-muted-foreground/80 max-w-3xl mx-auto mb-16 animate-slide-up delay-300 leading-relaxed">
           Crafting elegant solutions through code. Passionate about building 
           impactful software and contributing to the developer community.
         </p>
