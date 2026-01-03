@@ -47,7 +47,9 @@ export const ParticleBackground = () => {
     const drawParticle = (particle: Particle) => {
       ctx.beginPath();
       ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(14, 165, 233, ${particle.opacity})`;
+      // Alternate between blue and purple particles
+      const color = Math.random() > 0.5 ? '59, 130, 246' : '168, 85, 247';
+      ctx.fillStyle = `rgba(${color}, ${particle.opacity})`;
       ctx.fill();
     };
 
@@ -62,7 +64,7 @@ export const ParticleBackground = () => {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(14, 165, 233, ${0.1 * (1 - distance / 150)})`;
+            ctx.strokeStyle = `rgba(99, 102, 241, ${0.15 * (1 - distance / 150)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
