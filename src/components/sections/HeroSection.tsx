@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
-const roles = ['Full Stack Developer', 'Researcher', 'Open Source Contributor'];
+const roles = ['Computer Science Graduate', 'AI & Machine Learning', 'Language Systems'];
 export const HeroSection = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
@@ -47,7 +47,7 @@ export const HeroSection = () => {
         {/* Typing Animation Role */}
         <div className="h-14 mb-8 animate-slide-up delay-200">
           <p className="text-2xl md:text-3xl text-muted-foreground">
-            
+            {displayedText}
             <span className="animate-pulse text-primary">|</span>
           </p>
         </div>
