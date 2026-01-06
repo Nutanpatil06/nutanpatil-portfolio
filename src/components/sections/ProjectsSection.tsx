@@ -4,37 +4,37 @@ import { Github, Folder, Clock } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'AI Code Assistant',
+    title: 'RAG Based Chatbot with Memory',
     description:
-      'An intelligent code completion tool powered by GPT-4 that helps developers write better code faster with context-aware suggestions.',
-    technologies: ['Python', 'OpenAI API', 'FastAPI', 'React'],
-    github: 'https://github.com',
+      'Developed a context-aware chatbot that remembers conversations and provides coherent multi-turn responses using RAG and memory systems.',
+    technologies: ['Python', 'LangChain', 'Google Gemini API', 'ChromaDB', 'BeautifulSoup'],
+    github: 'https://github.com/Nutanpatil06/RAG_Based_Chatbot_With_Memory',
     status: 'completed',
   },
   {
     id: 2,
-    title: 'Distributed Task Queue',
+    title: 'Advanced RAG with Sentence Window Retrieval',
     description:
-      'High-performance distributed task queue system capable of handling millions of jobs with fault tolerance and horizontal scaling.',
-    technologies: ['Go', 'Redis', 'Kubernetes', 'gRPC'],
-    github: 'https://github.com',
+      'Built a smart document Q&A system that understands context beyond keywords, delivering 40% more accurate answers than standard search engines.',
+    technologies: ['LlamaIndex', 'Qdrant', 'Gemini LLM', 'HuggingFace Embeddings'],
+    github: 'https://github.com/Nutanpatil06/Advanced_RAG_With_Sentence_Window_Retrieval',
     status: 'completed',
   },
   {
     id: 3,
-    title: 'Real-time Collaboration App',
+    title: 'Fine Tuning LLM with LLaMA Factory',
     description:
-      'Google Docs-like real-time collaboration platform with CRDT-based conflict resolution and offline support.',
-    technologies: ['TypeScript', 'WebSocket', 'Yjs', 'Next.js'],
-    github: 'https://github.com',
+      'Built a complete LLM fine-tuning system that adapts models like Gemma using 70% less memory while maintaining full performance.',
+    technologies: ['Hugging Face Transformers', 'PEFT (LoRA/QLoRA)', 'Gradio'],
+    github: 'https://github.com/Nutanpatil06/Fine-Tuning-LLM-with-LLaMA-Factory',
     status: 'completed',
   },
   {
     id: 4,
-    title: 'Neural Network Visualizer',
+    title: 'AI-Powered Park Surveillance System',
     description:
-      'Building an interactive tool to visualize neural network architectures and training processes in real-time with 3D representations.',
-    technologies: ['Python', 'Three.js', 'TensorFlow', 'WebGL'],
+      'A real-time video analytics platform that uses object detection to identify and flag unauthorized activities in parks, enhancing security with a color-coded alert dashboard.',
+    technologies: ['Python', 'YOLO/SSD', 'Streamlit', 'OpenCV', 'TensorFlow/PyTorch'],
     github: null,
     status: 'ongoing',
   },

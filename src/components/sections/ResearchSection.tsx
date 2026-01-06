@@ -4,20 +4,11 @@ import { FileText, Users, Clock } from 'lucide-react';
 const papers = [
   {
     id: 1,
-    title: 'Efficient Transformer Architectures for Low-Resource NLP',
-    authors: ['Your Name', 'Co-Author A', 'Co-Author B'],
+    title: 'Improving Faithfulness in Multi-Turn Dialogue Systems using Retrieval-Augmented Generation',
+    authors: ['Nutan Patil'],
     venue: 'In Progress',
     abstract:
-      'Proposing novel transformer modifications that reduce computational requirements by 60% while maintaining performance on low-resource language tasks.',
-    status: 'ongoing',
-  },
-  {
-    id: 2,
-    title: 'Distributed Learning with Privacy Guarantees',
-    authors: ['Your Name', 'Co-Author C'],
-    venue: 'In Progress',
-    abstract:
-      'Developing a novel framework for federated learning that provides differential privacy guarantees while achieving state-of-the-art accuracy on benchmark datasets.',
+      'This ongoing research explores how retrieval-augmented generation (RAG) can improve factual consistency and faithfulness in multi-turn dialogue systems. The study focuses on maintaining context across conversation turns while grounding responses in external documents to reduce hallucinations. Currently experimenting with different retrieval strategies and dialogue memory mechanisms to analyze their impact on response quality.',
     status: 'ongoing',
   },
 ];

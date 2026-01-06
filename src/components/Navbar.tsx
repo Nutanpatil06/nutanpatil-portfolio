@@ -8,7 +8,6 @@ const navLinks = [
   { name: 'Projects', href: '#projects' },
   { name: 'Research', href: '#research' },
   { name: 'Certifications', href: '#certifications' },
-  { name: 'Blog', href: '#blog' },
   { name: 'Contact', href: '#contact' },
 ];
 
@@ -64,7 +63,7 @@ export const Navbar = () => {
           }}
           className="font-display text-xl font-bold gradient-text"
         >
-          Portfolio
+          Nutan Patil
         </a>
 
         {/* Desktop Navigation */}
