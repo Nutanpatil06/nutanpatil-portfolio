@@ -6,77 +6,78 @@
 
 @layer base {
   :root {
-    --background: 210 100% 99%;
-    --foreground: 222 47% 20%;
+    --background: 200 100% 99%;
+    --foreground: 200 50% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 20%;
+    --card-foreground: 200 50% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 20%;
+    --popover-foreground: 200 50% 25%;
 
-    --primary: 217 91% 60%;
+    --primary: 200 85% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 262 83% 68%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 200 70% 65%;
+    --secondary-foreground: 200 50% 20%;
 
-    --muted: 214 32% 95%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 200 40% 96%;
+    --muted-foreground: 200 30% 45%;
 
-    --accent: 330 81% 60%;
+    --accent: 200 90% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 95%;
-    --ring: 217 91% 60%;
+    --border: 200 40% 90%;
+    --input: 200 40% 96%;
+    --ring: 200 85% 55%;
 
     --radius: 1rem;
 
     /* Custom glassmorphism colors */
-    --glass: 217 91% 60%;
-    --glass-border: 217 60% 80%;
+    --glass: 200 85% 55%;
+    --glass-border: 200 60% 85%;
     
     /* Gradient colors */
-    --gradient-start: 217 91% 60%;
-    --gradient-end: 262 83% 68%;
+    --gradient-start: 200 85% 60%;
+    --gradient-mid: 200 80% 70%;
+    --gradient-end: 200 75% 80%;
     
     /* Glow effects */
-    --glow-primary: 217 91% 60%;
-    --glow-accent: 330 81% 60%;
+    --glow-primary: 200 85% 55%;
+    --glow-accent: 200 90% 50%;
   }
 
   .dark {
-    --background: 210 100% 99%;
-    --foreground: 222 47% 20%;
+    --background: 200 100% 99%;
+    --foreground: 200 50% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 20%;
+    --card-foreground: 200 50% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 20%;
+    --popover-foreground: 200 50% 25%;
 
-    --primary: 217 91% 60%;
+    --primary: 200 85% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 262 83% 68%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 200 70% 65%;
+    --secondary-foreground: 200 50% 20%;
 
-    --muted: 214 32% 95%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 200 40% 96%;
+    --muted-foreground: 200 30% 45%;
 
-    --accent: 330 81% 60%;
+    --accent: 200 90% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 95%;
-    --ring: 217 91% 60%;
+    --border: 200 40% 90%;
+    --input: 200 40% 96%;
+    --ring: 200 85% 55%;
   }
 }
 
