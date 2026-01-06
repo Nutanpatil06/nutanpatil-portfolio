@@ -4,28 +4,12 @@ import { GraduationCap, Award, Calendar } from 'lucide-react';
 const education = [
   {
     id: 1,
-    degree: 'Master of Science in Computer Science',
-    institution: 'Stanford University',
-    year: '2024 - 2026 (Expected)',
-    gpa: '4.0/4.0',
-    highlights: [
-      'Focus on Machine Learning and Distributed Systems',
-      'Graduate Research Assistant',
-      'Teaching Assistant for Advanced Algorithms',
-    ],
-  },
-  {
-    id: 2,
-    degree: 'Bachelor of Technology in Computer Science',
-    institution: 'Indian Institute of Technology',
-    year: '2020 - 2024',
-    gpa: '9.5/10.0',
-    highlights: [
-      'First Class with Distinction',
-      "Dean's List all semesters",
-      'President of Coding Club',
-      'Hackathon Winner (3x)',
-    ],
+    degree: 'Bachelor of Technology in Computer Science and Engineering',
+    institution: 'Shri Sant Gadge Baba College of Engineering and Technology (SSGBCOET)',
+    location: 'Bhusawal, Maharashtra',
+    year: '2021 - 2025',
+    gpa: '3.36/4.0',
+    highlights: [],
   },
 ];
 
@@ -48,7 +32,7 @@ export const EducationSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           {education.map((edu, index) => (
             <div
               key={edu.id}
@@ -68,30 +52,19 @@ export const EducationSection = () => {
                     {edu.degree}
                   </h3>
                   <p className="text-primary font-medium">{edu.institution}</p>
+                  <p className="text-muted-foreground text-sm">{edu.location}</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-6 mb-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-6 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2">
                   <Calendar size={16} />
                   {edu.year}
                 </span>
                 <span className="flex items-center gap-2">
                   <Award size={16} />
-                  GPA: {edu.gpa}
+                  CGPA: {edu.gpa}
                 </span>
-              </div>
-
-              <div className="space-y-3">
-                {edu.highlights.map((highlight, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-3 text-muted-foreground"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                    <span>{highlight}</span>
-                  </div>
-                ))}
               </div>
             </div>
           ))}

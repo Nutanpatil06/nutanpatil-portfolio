@@ -4,43 +4,39 @@ import { Briefcase, Calendar, MapPin } from 'lucide-react';
 const experiences = [
   {
     id: 1,
-    role: 'Software Engineering Intern',
-    company: 'Tech Company A',
-    location: 'San Francisco, CA',
-    duration: 'Jun 2024 - Aug 2024',
-    description:
-      'Developed and deployed microservices architecture improving system performance by 40%. Collaborated with cross-functional teams on product features.',
-    technologies: ['React', 'Node.js', 'AWS', 'Docker'],
+    role: 'AI Virtual Internship',
+    company: 'Infosys',
+    location: 'Remote',
+    duration: '22 Dec 2025 – Present',
+    description: [
+      'Developing an AI-based video surveillance platform to enhance park security by detecting and flagging unauthorized activities in real time using YOLO/SSD models.',
+      'Building an interactive Streamlit dashboard with a color-coded alert system (green/red) and optimizing the model for accurate, real-time activity recognition.',
+    ],
+    technologies: ['Python', 'YOLO/SSD', 'Streamlit', 'OpenCV'],
   },
   {
     id: 2,
-    role: 'Full Stack Developer Intern',
-    company: 'Startup B',
+    role: 'Gen AI Internship',
+    company: 'BrainOVision',
     location: 'Remote',
-    duration: 'Jan 2024 - May 2024',
-    description:
-      'Built responsive web applications serving 10K+ users. Implemented CI/CD pipelines reducing deployment time by 60%.',
-    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind'],
+    duration: '19 May 2025 - 20 Aug 2025',
+    description: [
+      'Applied Generative AI concepts to build an AI-driven prototype for content automation, utilizing LLMs and APIs to solve real-world tasks.',
+      'Designed and tested AI workflows that improved automation efficiency and demonstrated practical applications of modern language models.',
+    ],
+    technologies: ['Python', 'LLM APIs', 'Prompt Engineering'],
   },
   {
     id: 3,
-    role: 'Research Intern',
-    company: 'University Lab',
-    location: 'Boston, MA',
-    duration: 'May 2023 - Dec 2023',
-    description:
-      'Conducted research on machine learning algorithms for natural language processing. Published findings in peer-reviewed conference.',
-    technologies: ['Python', 'PyTorch', 'NLP', 'TensorFlow'],
-  },
-  {
-    id: 4,
-    role: 'Web Development Intern',
-    company: 'Agency C',
-    location: 'New York, NY',
-    duration: 'Jun 2022 - Aug 2022',
-    description:
-      'Designed and developed client websites with focus on performance and accessibility. Managed multiple projects simultaneously.',
-    technologies: ['JavaScript', 'HTML/CSS', 'WordPress', 'Figma'],
+    role: 'Web Application Development Internship',
+    company: 'Ninja Coders Hub',
+    location: 'Remote',
+    duration: '1 Nov 2024 - 2 May 2025',
+    description: [
+      'Engineered a full-stack Vehicle Intelligence System with real-time monitoring and smart parking detection to streamline vehicle management for drivers.',
+      'Developed scalable features using React, Node.js, and RESTful APIs, and integrated secure third-party authentication to enhance user onboarding and system security.',
+    ],
+    technologies: ['React', 'Node.js', 'MongoDB', 'REST APIs'],
   },
 ];
 
@@ -59,7 +55,7 @@ export const ExperienceSection = () => {
             <span className="gradient-text">Experience</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            My professional journey and internships that shaped my skills
+            My professional journey and internship experiences
           </p>
         </div>
 
@@ -115,7 +111,19 @@ export const ExperienceSection = () => {
                     </span>
                   </div>
 
-                  <p className="text-muted-foreground mb-4">{exp.description}</p>
+                  <ul className={`space-y-2 mb-4 ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+                    {exp.description.map((item, i) => (
+                      <li
+                        key={i}
+                        className={`text-muted-foreground text-sm flex items-start gap-2 ${
+                          index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                        }`}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
 
                   <div
                     className={`flex flex-wrap gap-2 ${

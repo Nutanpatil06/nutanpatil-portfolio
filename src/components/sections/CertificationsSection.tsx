@@ -1,102 +1,75 @@
-import { useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Award, X } from 'lucide-react';
+import { Award, ExternalLink } from 'lucide-react';
 
 interface Certification {
   id: string;
   name: string;
   issuer: string;
   summary: string;
-  imageUrl: string;
-  date: string;
+  link: string;
 }
 
 const certifications: Certification[] = [
   {
     id: '1',
-    name: 'AWS Solutions Architect',
-    issuer: 'Amazon Web Services',
-    summary: 'Validated expertise in designing distributed systems on AWS cloud infrastructure.',
-    imageUrl: 'https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=800',
-    date: '2024',
+    name: 'Oracle Cloud Infrastructure 2025 Certified Generative AI Professional',
+    issuer: 'Oracle University',
+    summary: 'Validates expertise in developing and implementing generative AI solutions on Oracle Cloud Infrastructure (OCI).',
+    link: 'https://drive.google.com/file/d/1GKxncXOBJlV6dt1PGzzjSaMh1nWIrPUP/view?usp=sharing',
   },
   {
     id: '2',
-    name: 'Google Cloud Professional',
-    issuer: 'Google Cloud',
-    summary: 'Demonstrated proficiency in GCP services and cloud architecture best practices.',
-    imageUrl: 'https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800',
-    date: '2024',
+    name: 'Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate',
+    issuer: 'Oracle University',
+    summary: 'Validates foundational knowledge of AI and machine learning concepts within the Oracle Cloud Infrastructure (OCI) ecosystem.',
+    link: 'https://drive.google.com/file/d/1etuwRS-0b8hnbVwX1L8sWCdZUz6JCJjG/view?usp=sharing',
   },
   {
     id: '3',
-    name: 'TensorFlow Developer',
-    issuer: 'Google',
-    summary: 'Certified in building and deploying ML models using TensorFlow framework.',
-    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800',
-    date: '2024',
+    name: 'Building Artificial Intelligence (인공지능 만들기)',
+    issuer: 'Seoul National University (서울대학교)',
+    summary: 'A project-based course covering the fundamental principles and practical implementation of artificial intelligence systems.',
+    link: 'https://drive.google.com/file/d/1w0zg7OzVQDiomRu7z34Qtd_qJ1DaPH06/view?usp=sharing',
   },
   {
     id: '4',
-    name: 'Kubernetes Administrator',
-    issuer: 'CNCF',
-    summary: 'Expert knowledge in container orchestration and Kubernetes cluster management.',
-    imageUrl: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800',
-    date: '2023',
+    name: 'EDA and Visualization for Data Science (데이터 과학의 EDA와 시각화)',
+    issuer: 'Chung-Ang University (중앙대학교)',
+    summary: 'Covers essential techniques for exploratory data analysis (EDA) and data visualization to extract insights and communicate findings.',
+    link: 'https://drive.google.com/file/d/1NwJVkRuhl--R2auPNjI8sL3EivuPZ0r1/view?usp=sharing',
   },
   {
     id: '5',
-    name: 'Azure Data Engineer',
-    issuer: 'Microsoft',
-    summary: 'Specialized in designing and implementing data solutions on Azure platform.',
-    imageUrl: 'https://images.unsplash.com/photo-1633419461186-7d40a38105ec?w=800',
-    date: '2023',
+    name: 'Academic Paper Writing Guide (논문작성 가이드)',
+    issuer: 'Sungkyunkwan University (성균관대학교)',
+    summary: 'A structured guide on the methodology, structure, and best practices for writing and publishing academic research papers.',
+    link: 'https://drive.google.com/file/d/11tH4reENXC4E9Nr6wujgChAb5j6bE1RD/view?usp=sharing',
   },
   {
     id: '6',
-    name: 'Deep Learning Specialization',
-    issuer: 'Coursera / DeepLearning.AI',
-    summary: 'Comprehensive training in neural networks, CNNs, RNNs, and sequence models.',
-    imageUrl: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800',
-    date: '2023',
+    name: 'Essential Mathematics for AI and Machine Learning',
+    issuer: 'Northwestern Polytechnical University',
+    summary: 'Covers the core mathematical principles (linear algebra, calculus, probability) essential for understanding and building AI and machine learning models.',
+    link: 'https://drive.google.com/file/d/1_b1FMGMLzv5mCb0qCPG3rEFl5xYO9lIF/view?usp=sharing',
   },
   {
     id: '7',
-    name: 'Python Professional',
-    issuer: 'Python Institute',
-    summary: 'Advanced Python programming skills including OOP and design patterns.',
-    imageUrl: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=800',
-    date: '2023',
+    name: '2025 Aspire Leaders Program',
+    issuer: 'Aspire Institute (Harvard University Collaboration)',
+    summary: 'A prestigious global leadership program focusing on developing leadership, critical thinking, and communication skills for creating social impact.',
+    link: 'https://drive.google.com/file/d/1Bcbh11N8j2RiPYytGLuibVW8MdF_whTe/view?usp=sharing',
   },
   {
     id: '8',
-    name: 'Data Science Professional',
-    issuer: 'IBM',
-    summary: 'End-to-end data science methodology from data collection to model deployment.',
-    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800',
-    date: '2022',
-  },
-  {
-    id: '9',
-    name: 'Machine Learning Engineer',
-    issuer: 'Udacity',
-    summary: 'Building production-ready ML pipelines and deploying models at scale.',
-    imageUrl: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800',
-    date: '2022',
-  },
-  {
-    id: '10',
-    name: 'SQL Advanced Analytics',
-    issuer: 'DataCamp',
-    summary: 'Advanced SQL techniques for complex data analysis and optimization.',
-    imageUrl: 'https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?w=800',
-    date: '2022',
+    name: 'TOPIK I - Level 1 (Test of Proficiency in Korean)',
+    issuer: 'National Institute for International Education (국립국제교육원), South Korea',
+    summary: 'Certifies basic proficiency in the Korean language for everyday conversations and understanding simple written texts.',
+    link: 'https://drive.google.com/file/d/1E8O5nmexu7wWKxbVv0gndazgvWvNPL7-/view?usp=sharing',
   },
 ];
 
 export const CertificationsSection = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
-  const [selectedCert, setSelectedCert] = useState<Certification | null>(null);
 
   return (
     <section id="certifications" className="section-padding" ref={ref}>
@@ -120,56 +93,23 @@ export const CertificationsSection = () => {
                   <Award size={24} className="text-primary" />
                 </div>
                 <div className="flex-1">
-                  <button
-                    onClick={() => setSelectedCert(cert)}
-                    className="text-lg font-display font-bold text-left hover:text-primary transition-colors story-link"
+                  <a
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-lg font-display font-bold text-left hover:text-primary transition-colors inline-flex items-center gap-2 group"
                   >
                     {cert.name}
-                  </button>
+                    <ExternalLink size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
                   <p className="text-sm text-muted-foreground">{cert.issuer}</p>
                 </div>
-                <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">{cert.date}</span>
               </div>
               <p className="text-muted-foreground text-sm leading-relaxed">{cert.summary}</p>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Certificate Modal */}
-      {selectedCert && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm" 
-          onClick={() => setSelectedCert(null)}
-        >
-          <div 
-            className="glass-card max-w-3xl w-full max-h-[90vh] overflow-y-auto" 
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="sticky top-0 glass-card p-4 flex items-center justify-between border-b border-border/50">
-              <div>
-                <h2 className="font-display font-bold">{selectedCert.name}</h2>
-                <p className="text-sm text-muted-foreground">{selectedCert.issuer} • {selectedCert.date}</p>
-              </div>
-              <button 
-                onClick={() => setSelectedCert(null)} 
-                className="p-2 hover:bg-muted rounded-lg transition-colors"
-              >
-                <X size={20} />
-              </button>
-            </div>
-            
-            <div className="p-6">
-              <img 
-                src={selectedCert.imageUrl} 
-                alt={`${selectedCert.name} Certificate`} 
-                className="w-full rounded-lg shadow-lg"
-              />
-              <p className="mt-4 text-muted-foreground">{selectedCert.summary}</p>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

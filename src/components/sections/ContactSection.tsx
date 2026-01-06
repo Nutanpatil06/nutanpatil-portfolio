@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Send, Mail, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Send, Mail, MapPin, Github, Linkedin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -33,10 +33,9 @@ export const ContactSection = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:hello@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/Nutanpatil06', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/nutanpatil06/', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:nutanpatildev@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -76,10 +75,25 @@ export const ContactSection = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
                     <a
-                      href="mailto:hello@example.com"
+                      href="mailto:nutanpatildev@gmail.com"
                       className="text-foreground hover:text-primary transition-colors"
                     >
-                      hello@example.com
+                      nutanpatildev@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-xl bg-primary/10 text-primary">
+                    <Phone size={24} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Phone</p>
+                    <a
+                      href="tel:+919322043500"
+                      className="text-foreground hover:text-primary transition-colors"
+                    >
+                      +91 9322043500
                     </a>
                   </div>
                 </div>
@@ -90,7 +104,7 @@ export const ContactSection = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="text-foreground">San Francisco, CA</p>
+                    <p className="text-foreground">Bhusawal, Jalgaon, Maharashtra, India</p>
                   </div>
                 </div>
               </div>
@@ -219,7 +233,7 @@ export const ContactSection = () => {
           style={{ transitionDelay: '300ms' }}
         >
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Your Name. Built with passion and code.
+            © {new Date().getFullYear()} Nutan Patil. Built with passion and code.
           </p>
         </div>
       </div>
