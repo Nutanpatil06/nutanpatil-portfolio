@@ -115,12 +115,10 @@ export const ExperienceSection = () => {
                     {exp.description.map((item, i) => (
                       <li
                         key={i}
-                        className={`text-muted-foreground text-sm flex items-start gap-2 ${
-                          index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                        }`}
+                        className="text-muted-foreground text-sm flex items-start gap-2"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                        <span>{item}</span>
+                        <span className="text-left">{item}</span>
                       </li>
                     ))}
                   </ul>
