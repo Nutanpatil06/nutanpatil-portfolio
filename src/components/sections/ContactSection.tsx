@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 export const ContactSection = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
@@ -20,22 +21,39 @@ export const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+      });
 
-    toast({
-      title: 'Message sent!',
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
+      if (error) throw error;
 
-    setFormData({ name: '', email: '', message: '' });
-    setIsSubmitting(false);
+      toast({
+        title: 'Message sent!',
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
+
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: 'Error sending message',
+        description: 'Please try again or contact me directly via email.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/Nutanpatil06', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/nutanpatil06/', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:nutanpatildev@gmail.com', label: 'Email' },
+    { icon: Mail, href: 'mailto:nutanpatildev@gmail.com?subject=Hello%20Nutan&body=Hi%20Nutan%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20reach%20out.%0A%0A', label: 'Email' },
   ];
 
   return (
