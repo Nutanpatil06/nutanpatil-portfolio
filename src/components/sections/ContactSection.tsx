@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
 
 export const ContactSection = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
@@ -21,37 +20,22 @@ export const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData,
-      });
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      if (error) throw error;
+    toast({
+      title: 'Message sent!',
+      description: "Thanks for reaching out. I'll get back to you soon.",
+    });
 
-      toast({
-        title: 'Message sent!',
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      });
-
-      setFormData({ name: '', email: '', message: '' });
-    } catch (error: any) {
-      console.error('Error sending message:', error);
-      toast({
-        title: 'Error sending message',
-        description: 'Please try again or contact me directly via email.',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(false);
   };
-
-  const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=nutanpatildev@gmail.com&su=Hello%20Nutan&body=Hi%20Nutan%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect.%0A%0ABest%20regards`;
 
   const socialLinks = [
     { icon: Github, href: 'https://github.com/Nutanpatil06', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/nutanpatil06/', label: 'LinkedIn' },
-    { icon: Mail, href: gmailComposeUrl, label: 'Email' },
+    { icon: Mail, href: 'mailto:nutanpatildev@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -91,9 +75,7 @@ export const ContactSection = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
                     <a
-                      href={gmailComposeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="mailto:nutanpatildev@gmail.com"
                       className="text-foreground hover:text-primary transition-colors"
                     >
                       nutanpatildev@gmail.com
