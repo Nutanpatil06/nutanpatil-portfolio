@@ -4,24 +4,33 @@ import { Github, Folder, Clock } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'RAG Based Chatbot with Memory',
+    title: 'VahanIQ (An Intelligent Vehicle System)',
     description:
-      'Developed a context-aware chatbot that remembers conversations and provides coherent multi-turn responses using RAG and memory systems.',
-    technologies: ['Python', 'LangChain', 'Google Gemini API', 'ChromaDB', 'BeautifulSoup'],
-    github: 'https://github.com/Nutanpatil06/RAG_Based_Chatbot_With_Memory',
+      'Built a full-stack Vehicle Intelligence System integrating real-time parking detection, vehicle health monitoring, and smart navigation for efficient urban mobility.',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express.js', 'PostgreSQL (Supabase)', 'Redis', 'WebSockets', 'Leaflet', 'JWT'],
+    github: 'https://github.com/Nutanpatil06/Vehicle_Intelligence_System',
     status: 'completed',
   },
   {
     id: 2,
-    title: 'Advanced RAG with Sentence Window Retrieval',
+    title: 'InKo (Indo-Korean Traditional Medicine Advisor)',
     description:
-      'Built a smart document Q&A system that understands context beyond keywords, delivering 40% more accurate answers than standard search engines.',
-    technologies: ['LlamaIndex', 'Qdrant', 'Gemini LLM', 'HuggingFace Embeddings'],
-    github: 'https://github.com/Nutanpatil06/Advanced_RAG_With_Sentence_Window_Retrieval',
+      'AI-powered wellness platform integrating Korean and Indian Traditional medicine to deliver safe, personalized herbal health recommendations and symptom tracking.',
+    technologies: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS', 'TypeScript', 'Python', 'TensorFlow', 'OpenAI API'],
+    github: 'https://github.com/Nutanpatil06/Indo-Korean_Traditional_Medicine_Advisor',
     status: 'completed',
   },
   {
     id: 3,
+    title: 'AI-Powered Park Surveillance System',
+    description:
+      'A real-time video analytics platform that uses object detection to identify and flag unauthorized activities in parks, enhancing security with a color-coded alert dashboard.',
+    technologies: ['Python', 'YOLO/SSD', 'Streamlit', 'OpenCV', 'TensorFlow/PyTorch'],
+    github: null,
+    status: 'ongoing',
+  },
+  {
+    id: 4,
     title: 'Fine Tuning LLM with LLaMA Factory',
     description:
       'Built a complete LLM fine-tuning system that adapts models like Gemma using 70% less memory while maintaining full performance.',
@@ -30,13 +39,22 @@ const projects = [
     status: 'completed',
   },
   {
-    id: 4,
-    title: 'AI-Powered Park Surveillance System',
+    id: 5,
+    title: 'RAG Based Chatbot with Memory',
     description:
-      'A real-time video analytics platform that uses object detection to identify and flag unauthorized activities in parks, enhancing security with a color-coded alert dashboard.',
-    technologies: ['Python', 'YOLO/SSD', 'Streamlit', 'OpenCV', 'TensorFlow/PyTorch'],
-    github: null,
-    status: 'ongoing',
+      'Developed a context-aware chatbot that remembers conversations and provides coherent multi-turn responses using RAG and memory systems.',
+    technologies: ['Python', 'LangChain', 'Google Gemini API', 'ChromaDB', 'BeautifulSoup'],
+    github: 'https://github.com/Nutanpatil06/RAG_Based_Chatbot_With_Memory',
+    status: 'completed',
+  },
+  {
+    id: 6,
+    title: 'Advanced RAG with Sentence Window Retrieval',
+    description:
+      'Built a smart document Q&A system that understands context beyond keywords, delivering 40% more accurate answers than standard search engines.',
+    technologies: ['LlamaIndex', 'Qdrant', 'Gemini LLM', 'HuggingFace Embeddings'],
+    github: 'https://github.com/Nutanpatil06/Advanced_RAG_With_Sentence_Window_Retrieval',
+    status: 'completed',
   },
 ];
 

@@ -96,7 +96,15 @@ export const ExperienceSection = () => {
                   </div>
 
                   <h3 className="text-xl md:text-2xl font-display font-bold mb-2">
-                    {exp.role}
+                    <a
+                      href={exp.certLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors inline-flex items-center gap-2 group/link"
+                    >
+                      {exp.role}
+                      <ExternalLink size={16} className="opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                    </a>
                   </h3>
 
                   <div
