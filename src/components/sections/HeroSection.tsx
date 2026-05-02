@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
 
-const roles = ['Computer Science Graduate', 'NLP, Machine Learning, RAG & Language Systems'];
+const roles = ['Computer Science and Engineering Graduate', 'Full-Stack Developer | AI & Web Systems'];
 
 export const HeroSection = () => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -68,7 +68,7 @@ export const HeroSection = () => {
 
         {/* Tagline */}
         <p className="text-lg md:text-xl text-muted-foreground/80 max-w-3xl mx-auto mb-16 animate-slide-up delay-300 leading-relaxed">
-          Interested in building reliable, grounded, and interactive AI systems using LLMs, NLP, and Retrieval-Augmented techniques.
+          Interested in building scalable and intelligent applications that combine software engineering with modern AI systems.
         </p>
 
         {/* Social Links */}
@@ -96,7 +96,7 @@ export const HeroSection = () => {
             />
           </a>
           <a
-            href="mailto:nutanpatildev@gmail.com"
+            href="mailto:nutanpatil.6504@gmail.com"
             className="glass-card-hover p-4 rounded-full group"
           >
             <Mail
