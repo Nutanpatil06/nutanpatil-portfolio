@@ -40,7 +40,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send email to Nutan
     const emailResponse = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>",
-      to: ["nutanpatildev@gmail.com"],
+      to: ["nutanpatil.6504@gmail.com"],
       subject: `New Portfolio Message from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
