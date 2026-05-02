@@ -26,8 +26,8 @@ const projects = [
     description:
       'A real-time video analytics platform that uses object detection to identify and flag unauthorized activities in parks, enhancing security with a color-coded alert dashboard.',
     technologies: ['Python', 'YOLO/SSD', 'Streamlit', 'OpenCV', 'TensorFlow/PyTorch'],
-    github: null,
-    status: 'ongoing',
+    github: 'https://github.com/Nutanpatil06/AI-Enabled-Surveillance-Platform-for-Public-Parks-with-Behavioral-Based-Safety-Monitoring',
+    status: 'completed',
   },
   {
     id: 4,
