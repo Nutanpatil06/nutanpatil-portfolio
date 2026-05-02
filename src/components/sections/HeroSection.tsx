@@ -10,7 +10,7 @@ export const HeroSection = () => {
 
   useEffect(() => {
     const currentRole = roles[currentRoleIndex];
-    let timeout: NodeJS.Timeout;
+    let timeout: ReturnType<typeof setTimeout>;
 
     if (!isDeleting && displayedText === currentRole) {
       timeout = setTimeout(() => setIsDeleting(true), 2000);
