@@ -1,10 +1,11 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Briefcase, Calendar, MapPin } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, ExternalLink } from 'lucide-react';
 
 const experiences = [
   {
     id: 1,
     role: 'AI Virtual Internship',
+    certLink: 'https://drive.google.com/file/d/1MHPRfx3kbq5eeg0WO-cFeJFV7Pr4D0aG/view?usp=drive_link',
     company: 'Infosys',
     location: 'Remote',
     duration: '22 Dec 2025 – Present',
@@ -17,6 +18,7 @@ const experiences = [
   {
     id: 2,
     role: 'Gen AI Internship',
+    certLink: 'https://drive.google.com/file/d/1ixWlH90Cmzzsxu08c-qNwjJ00qP-ay8w/view?usp=sharing',
     company: 'BrainOVision',
     location: 'Remote',
     duration: '19 May 2025 - 20 Aug 2025',
@@ -29,6 +31,7 @@ const experiences = [
   {
     id: 3,
     role: 'Web Application Development Internship',
+    certLink: 'https://drive.google.com/file/d/1KlwxI9DcQfyal-rUkHdYl4zAOdP7O9xm/view?usp=sharing',
     company: 'Ninja Coders Hub',
     location: 'Remote',
     duration: '1 Nov 2024 - 2 May 2025',
@@ -93,7 +96,15 @@ export const ExperienceSection = () => {
                   </div>
 
                   <h3 className="text-xl md:text-2xl font-display font-bold mb-2">
-                    {exp.role}
+                    <a
+                      href={exp.certLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors inline-flex items-center gap-2 group/link"
+                    >
+                      {exp.role}
+                      <ExternalLink size={16} className="opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                    </a>
                   </h3>
 
                   <div

@@ -53,7 +53,7 @@ export const ContactSection = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/Nutanpatil06', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/nutanpatil06/', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:nutanpatildev@gmail.com?subject=Hello%20Nutan&body=Hi%20Nutan%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20reach%20out.%0A%0A', label: 'Email' },
+    { icon: Mail, href: 'mailto:nutanpatil.6504@gmail.com?subject=Hello%20Nutan&body=Hi%20Nutan%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20wanted%20to%20reach%20out.%0A%0A', label: 'Email' },
   ];
 
   return (
@@ -93,10 +93,10 @@ export const ContactSection = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
                     <a
-                      href="mailto:nutanpatildev@gmail.com"
+                      href="mailto:nutanpatil.6504@gmail.com"
                       className="text-foreground hover:text-primary transition-colors"
                     >
-                      nutanpatildev@gmail.com
+                      nutanpatil.6504@gmail.com
                     </a>
                   </div>
                 </div>
