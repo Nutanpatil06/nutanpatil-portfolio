@@ -8,7 +8,7 @@ const experiences = [
     certLink: 'https://drive.google.com/file/d/1MHPRfx3kbq5eeg0WO-cFeJFV7Pr4D0aG/view?usp=drive_link',
     company: 'Infosys',
     location: 'Remote',
-    duration: '22 Dec 2025 – Present',
+    duration: '22 Dec 2025 - 25 Feb 2026',
     description: [
       'Developing an AI-based video surveillance platform to enhance park security by detecting and flagging unauthorized activities in real time using YOLO/SSD models.',
       'Building an interactive Streamlit dashboard with a color-coded alert system (green/red) and optimizing the model for accurate, real-time activity recognition.',
