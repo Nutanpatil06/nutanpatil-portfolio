@@ -22,6 +22,15 @@ const projects = [
   },
   {
     id: 3,
+    title: 'ProjeX (Project Management System)',
+    description:
+      'A real-time Kanban-based project management platform built with Next.js and Supabase, enabling teams to collaborate, assign tasks, and track project progress efficiently.',
+    technologies: ['React.js', 'Next.js', 'TypeScript', 'Supabase'],
+    github: 'https://github.com/Nutanpatil06/ProjeX',
+    status: 'completed',
+  },
+  {
+    id: 4,
     title: 'AI-Powered Park Surveillance System',
     description:
       'A real-time video analytics platform that uses object detection to identify and flag unauthorized activities in parks, enhancing security with a color-coded alert dashboard.',
