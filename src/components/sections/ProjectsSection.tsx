@@ -39,7 +39,7 @@ const projects = [
     status: 'completed',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Fine Tuning LLM with LLaMA Factory',
     description:
       'Built a complete LLM fine-tuning system that adapts models like Gemma using 70% less memory while maintaining full performance.',
@@ -48,7 +48,7 @@ const projects = [
     status: 'completed',
   },
   {
-    id: 5,
+    id: 6,
     title: 'RAG Based Chatbot with Memory',
     description:
       'Developed a context-aware chatbot that remembers conversations and provides coherent multi-turn responses using RAG and memory systems.',
@@ -57,7 +57,7 @@ const projects = [
     status: 'completed',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Advanced RAG with Sentence Window Retrieval',
     description:
       'Built a smart document Q&A system that understands context beyond keywords, delivering 40% more accurate answers than standard search engines.',
