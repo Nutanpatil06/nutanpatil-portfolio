@@ -8,7 +8,7 @@ const education = [
     institution: 'Shri Sant Gadge Baba College of Engineering and Technology (SSGBCOET)',
     location: 'Bhusawal, Maharashtra',
     year: '2021 - 2025',
-    gpa: '8.17/10.0 (3.44/4.0)',
+    gpa: '8.17/10.0 (3.35/4.0)',
     highlights: [],
   },
 ];
